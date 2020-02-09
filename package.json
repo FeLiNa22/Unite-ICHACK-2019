@@ -1,7 +1,6 @@
 {
   "name": "ichack",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "dependencies": {
     "express-handlebars": "^3.1.0",
@@ -22,5 +21,6 @@
   "bugs": {
     "url": "https://github.com/FeLiNa22/ICHACK/issues"
   },
-  "homepage": "https://github.com/FeLiNa22/ICHACK#readme"
+  "homepage": "https://github.com/FeLiNa22/ICHACK#readme",
+  "description": ""
 }
