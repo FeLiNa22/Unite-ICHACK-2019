@@ -6,10 +6,10 @@ var logger = require('morgan');
 var hbs = require('express-handlebars');
 var mysql = require('mysql');
 var connection = mysql.createConnection({
-  host: 'eu-cdbr-west-02.cleardb.net',
-  user: 'b380ca6d8c4a86',
-  password: 'b6cb2eb0',
-  database: 'heroku_c09f1c7a9daf41a'
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'ichack_2020'
 });
 connection.connect(function(err){
   if(err){
