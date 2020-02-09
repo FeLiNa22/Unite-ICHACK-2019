@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 
 /* GET home page. */
 router.get('/link_accounts', function(req, res, next) {
-  res.render('LinkedAccounts', {orders :all_orders, title: 'UNITE | Dashboard' });
+  res.render('LinkedAccounts', {accounts :accounts, title: 'UNITE | Dashboard' });
 });
 
 /* GET home page. */

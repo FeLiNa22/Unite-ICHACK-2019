@@ -181,6 +181,7 @@
                                             <div class="card-body">
                                                 <div class="table-responsive">
                                                     <table id="table" class="mb-0 table">
+                                                        <p>Click on an order for more details</p>
                                                         <thead>
                                                             <tr>
                                                                 <th><a style="cursor: pointer;" onclick="sortTable(0)">Store</a></th>
@@ -192,7 +193,7 @@
                                                         </thead>
                                                         <tbody>
                                                         {{#each orders as |order|}}
-                                                        <tr href="">
+                                                        <tr data-toggle="modal" data-target=".bd-example-modal-lg">
                                                             <td><img width="42" src="images/stores/{{order.icon_link}}" alt=""></td>
                                                             <td>{{order.store_name}}</td>
                                                             <td>{{order.item}}</td>
