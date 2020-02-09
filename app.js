@@ -6,7 +6,7 @@ var logger = require('morgan');
 var hbs = require('express-handlebars');
 var mysql = require('mysql');
 var connection = mysql.createConnection({
-  host: 'localhost',
+  host: '146.169.174.182',
   user: 'root',
   password: '',
   database: 'ichack_2020'
