@@ -1,0 +1,26 @@
+{
+  "name": "ichack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.2",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FeLiNa22/ICHACK.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FeLiNa22/ICHACK/issues"
+  },
+  "homepage": "https://github.com/FeLiNa22/ICHACK#readme"
+}

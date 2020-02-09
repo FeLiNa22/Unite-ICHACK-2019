@@ -176,6 +176,34 @@
                                             <li class="nav-item"><a class="active nav-link order-bar">Refresh <i class="pe-7s-refresh-2" style="padding:5px;"></i></a></li>
                                         </ul>
                                     </div>
+                                            
+                                    <div class="col-lg-6">
+                                        <div class="main-card mb-3 card">
+                                            <div class="card-body"><h5 class="card-title">Table with hover</h5>
+                                                <table class="mb-0 table table-hover">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>First Name</th>
+                                                        <th>Last Name</th>
+                                                        <th>Username</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    {{#each orders model as |order i|}}
+                                                    <tr>
+                                                        <th scope="row">{{i}}</th>
+                                                        <img width="42" src="images/stores/{{this.icon_link}}" alt="">
+                                                        <td>{{order.store_name}}</td>
+                                                        <td>{{order.store_name}}</td>
+                                                        <td>{{order.}}</td>
+                                                    </tr>
+                                                    {{/each}}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="card-body">
                                         <div class="tab-content">
                                             <div class="tab-pane fade show active" id="tabs-eg-77">
@@ -183,7 +211,7 @@
                                                 <div class="scroll-area-bg">
                                                     <div class="scrollbar-container">
                                                     <ul class="rm-list-borders rm-list-borders-scroll list-group list-group-flush orders">
-                                                            {{#each orders}}
+                                                            {{#each orders model as |order i|}}
                                                             <li class="list-group-item">
                                                                 <div class="widget-content p-0">
                                                                     <div class="widget-content-wrapper">
