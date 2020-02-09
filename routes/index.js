@@ -14,7 +14,7 @@ router.get('/link_accounts', function(req, res, next) {
 
 /* GET home page. */
 router.get('/review_orders', function(req, res, next) {
-  res.render('ReviewOrders', { title: 'UNITE | Dashboard' });
+  res.render('ReviewOrders', { orders :all_orders, title: 'UNITE | Dashboard' });
 });
 
 
