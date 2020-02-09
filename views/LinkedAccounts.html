@@ -189,7 +189,7 @@
                                                 <div class="scroll-area-bg">
                                                     <div class="scrollbar-container">
                                                     <ul class="rm-list-borders rm-list-borders-scroll list-group list-group-flush orders">
-                                                            {{#each current_month_orders}}
+                                                            {{#each accounts}}
                                                             <li class="list-group-item">
                                                                 <div class="widget-content p-0">
                                                                     <div class="widget-content-wrapper">
@@ -197,15 +197,10 @@
                                                                             <img width="42" src="images/stores/{{this.icon_link}}" alt="">
                                                                         </div>
                                                                         <div class="widget-content-left">
-                                                                            <div class="widget-heading">{{this.store_name}}</div>
-                                                                            <div class="widget-subheading">{{this.item}}</div>
+                                                                            <div class="widget-heading">  Store Name: {{this.store_name}}</div>
+                                                                            <div class="widget-subheading">Store username: {{this.username}}</div>
                                                                         </div>
-                                                                        <div class="widget-content-right">
-                                                                            <div class="font-size-xlg text-muted">
-                                                                                <small class="opacity-5 ">£</small>
-                                                                                <span>{{this.cost}}</span>
-                                                                            </div>
-                                                                        </div>
+                                                                     
                                                                     </div>
                                                                 </div>
                                                             </li>
