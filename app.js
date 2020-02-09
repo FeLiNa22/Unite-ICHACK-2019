@@ -7,8 +7,8 @@ var hbs = require('express-handlebars');
 var mysql = require('mysql');
 var connection = mysql.createConnection({
   host: '146.169.174.182',
-  user: 'root',
-  password: '',
+  user: 'ichack',
+  password: 'lol',
   database: 'ichack_2020'
 });
 connection.connect(function(err){
