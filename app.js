@@ -38,7 +38,7 @@ connection.query('SELECT delivery_date,item,store_name,icon_link,FORMAT(cost,2) 
     console.log(rows);
 });
 
-connection.query('SELECT *, DATE_FORMAT("%m/%d/%Y", delivery_date) AS date FROM orders'
+connection.query("SELECT *, DATE_FORMAT(delivery_date,'%m/%d/%Y') AS delivery_date,DATE_FORMAT(dispatch_date,'%m/%d/%Y') AS dispatch_date FROM orders"
 + ' NATURAL JOIN stores'
 + ' ORDER BY delivery_date DESC'
 ,
