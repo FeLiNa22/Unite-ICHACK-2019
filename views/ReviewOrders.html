@@ -176,34 +176,33 @@
                                             <li class="nav-item"><a class="active nav-link order-bar">Refresh <i class="pe-7s-refresh-2" style="padding:5px;"></i></a></li>
                                         </ul>
                                     </div>
-                                            
-                                    <div class="col-lg-12">
+                                    <div class="col-lg-12 col-md-12">
                                         <div class="main-card mb-3 card">
                                             <div class="card-body">
-                                                <table class="mb-0 table table-hover">
-                                                    <thead>
-                                                    <tr>
-                                                        <th>#</th>
-                                                        <th></th>
-                                                        <th>Store</th>
-                                                        <th>Items</th>
-                                                        <th class="active">Delivery Date</th>
-                                                        <th>Dispatch Date</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    {{#each orders as |order i|}}
-                                                    <tr>
-                                                        <th scope="row">{{i}}</th>
-                                                        <td><img width="42" src="images/stores/{{order.icon_link}}" alt=""></td>
-                                                        <td>{{order.store_name}}</td>
-                                                        <td>{{order.item}}</td>
-                                                        <td>{{order.delivery_date}}</td>
-                                                        <td>{{order.dispatch_date}}</td>
-                                                    </tr>
-                                                    {{/each}}
-                                                    </tbody>
-                                                </table>
+                                                <div class="table-responsive">
+                                                    <table id="table" class="mb-0 table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th><a style="cursor: pointer;" onclick="sortTable(0)">Store</a></th>
+                                                                <th></th>
+                                                                <th style="cursor: pointer;" onclick="sortTable(2)">Items</th>
+                                                                <th style="cursor: pointer;" onclick="sortTable(3)" class="active">Delivery Date</th>
+                                                                <th style="cursor: pointer;" onclick="sortTable(4)">Dispatch Date</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        {{#each orders as |order|}}
+                                                        <tr href="">
+                                                            <td><img width="42" src="images/stores/{{order.icon_link}}" alt=""></td>
+                                                            <td>{{order.store_name}}</td>
+                                                            <td>{{order.item}}</td>
+                                                            <td>{{order.delivery_date}}</td>
+                                                            <td>{{order.dispatch_date}}</td>
+                                                        </tr>
+                                                        {{/each}}
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -241,5 +240,61 @@
         $('.orders').toggle();
     });
 </script> 
+<script>
+    function sortTable(n) {
+      var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+      table = document.getElementById("table");
+      switching = true;
+      // Set the sorting direction to ascending:
+      dir = "asc";
+      /* Make a loop that will continue until
+      no switching has been done: */
+      while (switching) {
+        // Start by saying: no switching is done:
+        switching = false;
+        rows = table.rows;
+        /* Loop through all table rows (except the
+        first, which contains table headers): */
+        for (i = 1; i < (rows.length - 1); i++) {
+          // Start by saying there should be no switching:
+          shouldSwitch = false;
+          /* Get the two elements you want to compare,
+          one from current row and one from the next: */
+          x = rows[i].getElementsByTagName("TD")[n];
+          y = rows[i + 1].getElementsByTagName("TD")[n];
+          /* Check if the two rows should switch place,
+          based on the direction, asc or desc: */
+          if (dir == "asc") {
+            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+              // If so, mark as a switch and break the loop:
+              shouldSwitch = true;
+              break;
+            }
+          } else if (dir == "desc") {
+            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+              // If so, mark as a switch and break the loop:
+              shouldSwitch = true;
+              break;
+            }
+          }
+        }
+        if (shouldSwitch) {
+          /* If a switch has been marked, make the switch
+          and mark that a switch has been done: */
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+          // Each time a switch is done, increase this count by 1:
+          switchcount ++;
+        } else {
+          /* If no switching has been done AND the direction is "asc",
+          set the direction to "desc" and run the while loop again. */
+          if (switchcount == 0 && dir == "asc") {
+            dir = "desc";
+            switching = true;
+          }
+        }
+      }
+    }
+</script>
 </body>
 </html>
