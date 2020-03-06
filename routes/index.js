@@ -1,13 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
-
-connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'ichack_2020'
-});
+var config = require('../config/database.json')
+connection = mysql.createConnection(config);
 
 connection.connect(function(err){
   if(err){
